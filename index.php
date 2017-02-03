@@ -1,5 +1,5 @@
 <?php
-
+  
 require('controllers/piezas_controller.php');
 require ('config/config_app.php');
 
@@ -11,14 +11,10 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)||$_REQUEST[ConfigApp::$ACTIO
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   	
   	case ConfigApp::$ACTION_HOME:
-  	$controller = new NavController();
-    $controller->mostrar(ConfigApp::$ACTION_HOME);
+  	$controller = new PiezasController();
+    $controller->mostrarHome();
     break;
 
-    case ConfigApp::$ACTION_STOCK:
-    $controller = new PiezasController();
-    $controller->mostrar();
-    break;
 
     case ConfigApp::$ACTION_VER_PIEZA:
     $controller = new PiezasController();
@@ -26,7 +22,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     break;
   
   default:
+    echo ConfigApp::$ACTION;
     echo 'Pagina no encontrada';
     break;
 }
+
+echo ConfigApp::$ACTION;
 ?>

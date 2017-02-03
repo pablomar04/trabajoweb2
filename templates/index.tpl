@@ -60,7 +60,7 @@
               <li ><a href="#" id="20F7">20F7</a></li>
             </ul>
             </li>
-            <li ><a href="#" id="stock">Stock</a></li>
+            
             <li ><a href="#" id="abm">Carga ABM</a></li>
 
           </ul>

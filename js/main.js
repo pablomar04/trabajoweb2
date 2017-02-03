@@ -38,4 +38,22 @@ $("#stock").click(function(){
 
 
 
+
+
 });
+
+function verPieza(idpieza){
+  $.ajax({
+    method:GET,
+    url:'api/pieza'+idpieza,
+    datatype:'JSON',
+    success:function(){
+
+    },
+    error:function(){
+      
+    }
+
+  });
+  
+}
