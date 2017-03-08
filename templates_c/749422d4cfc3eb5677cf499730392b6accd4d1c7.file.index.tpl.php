@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2017-02-03 03:52:42
+<?php /* Smarty version Smarty-3.1.14, created on 2017-02-22 23:56:14
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:612857e4a543dd9396-20366433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1486081712,
+      1 => 1487804076,
       2 => 'file',
     ),
   ),
@@ -17,11 +17,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_57e4a543eb3fc6_23096345',
-  'variables' => 
-  array (
-    'piezas' => 0,
-    'pieza' => 0,
-  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57e4a543eb3fc6_23096345')) {function content_57e4a543eb3fc6_23096345($_smarty_tpl) {?>
@@ -34,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="">
 
     <title>Stock de piezas</title>
 
@@ -97,42 +92,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div id="contenedor">
     
-      <h1 class="page-header">Listado de piezas</h1>
 
-      <div class="table-responsive">
+      <div class="table-responsive" >
         <table class="table table-striped">
           <thead>
-            <tr>
-              
+            <tr>          
               <th>Codigo</th>
-              <th>Descripcion</th>
-              <th>Campaña</th>
+              <th>Descripcion</th>             
               <th>Cantidad</th>
+              <th>Campaña</th>
               <th></th>
-
             </tr>
           </thead>
-          <tbody>
-              <?php  $_smarty_tpl->tpl_vars['pieza'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pieza']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['piezas']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['pieza']->key => $_smarty_tpl->tpl_vars['pieza']->value){
-$_smarty_tpl->tpl_vars['pieza']->_loop = true;
-?>
-              <tr>
-                <td><?php echo $_smarty_tpl->tpl_vars['pieza']->value['codigo'];?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['pieza']->value['descripcion'];?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['pieza']->value['codigoc'];?>
-</td>
-                <td><?php echo $_smarty_tpl->tpl_vars['pieza']->value['cantidad'];?>
-</td>
-                <td><a href="index.php?action=ver_pieza&id_pieza=<?php echo $_smarty_tpl->tpl_vars['pieza']->value['id'];?>
-"><i class="fa fa-info fa-2x" aria-hidden="true"></i></a></td>               
-              </tr>
-              <?php } ?>
+          <tbody id='listaPiezas'>           
+            
           </tbody>
         </table>
+ 
+                               
+             
       </div>
 
     </div>

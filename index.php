@@ -22,7 +22,7 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     break;
   
   default:
-    echo ConfigApp::$ACTION;
+    
     echo 'Pagina no encontrada';
     break;
 }

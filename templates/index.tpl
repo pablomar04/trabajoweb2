@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="">
 
     <title>Stock de piezas</title>
 
@@ -71,33 +71,25 @@
 
     <div id="contenedor">
     
-      <h1 class="page-header">Listado de piezas</h1>
 
-      <div class="table-responsive">
+      <div class="table-responsive" >
         <table class="table table-striped">
           <thead>
-            <tr>
-              
+            <tr>          
               <th>Codigo</th>
-              <th>Descripcion</th>
-              <th>Campaña</th>
+              <th>Descripcion</th>             
               <th>Cantidad</th>
+              <th>Campaña</th>
               <th></th>
-
             </tr>
           </thead>
-          <tbody>
-              {foreach from=$piezas  item=pieza}
-              <tr>
-                <td>{$pieza['codigo']}</td>
-                <td>{$pieza['descripcion']}</td>
-                <td>{$pieza['codigoc']}</td>
-                <td>{$pieza['cantidad']}</td>
-                <td><a href="index.php?action=ver_pieza&id_pieza={$pieza['id']}"><i class="fa fa-info fa-2x" aria-hidden="true"></i></a></td>               
-              </tr>
-              {/foreach}
+          <tbody id='listaPiezas'>           
+            
           </tbody>
         </table>
+ 
+                               
+             
       </div>
 
     </div>

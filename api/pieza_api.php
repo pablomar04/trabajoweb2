@@ -1,6 +1,6 @@
 <?php
 require 'api.php';
-require '../models/piezasModel.php';
+require '../models/piezas_model.php';
 class piezaApi extends Api
 {
   private $model;
@@ -17,7 +17,7 @@ class piezaApi extends Api
             $error['Error'] = "La pieza no existe";
             return ($pieza) ? $pieza : $error;
           }else{
-            return $this->model->getpiezas();
+            return $this->model->getPiezas();
           }
         break;
       case 'DELETE':

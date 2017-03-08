@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2016 a las 16:35:26
--- Versión del servidor: 5.6.24
--- Versión de PHP: 5.6.8
+-- Tiempo de generación: 03-02-2017 a las 04:36:43
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `stock`
@@ -26,17 +26,17 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `campanias`
 --
 
-CREATE TABLE IF NOT EXISTS `campanias` (
+CREATE TABLE `campanias` (
   `id_campania` int(11) NOT NULL,
-  `codigo` varchar(11) NOT NULL,
+  `codigoc` varchar(11) NOT NULL,
   `titulo` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `campanias`
 --
 
-INSERT INTO `campanias` (`id_campania`, `codigo`, `titulo`) VALUES
+INSERT INTO `campanias` (`id_campania`, `codigoc`, `titulo`) VALUES
 (1, '10D8', 'S-Numero de Motor'),
 (2, '15E7', 'S-Sustitución del variador del árbol de'),
 (3, '20I4', 'A-Inspección de manguera de suministro d'),
@@ -85,7 +85,7 @@ INSERT INTO `campanias` (`id_campania`, `codigo`, `titulo`) VALUES
 -- Estructura de tabla para la tabla `imagenes`
 --
 
-CREATE TABLE IF NOT EXISTS `imagenes` (
+CREATE TABLE `imagenes` (
   `id_imagen` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
   `fk_id_pieza` int(11) NOT NULL
@@ -97,13 +97,13 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
 -- Estructura de tabla para la tabla `piezas`
 --
 
-CREATE TABLE IF NOT EXISTS `piezas` (
+CREATE TABLE `piezas` (
   `id` int(11) NOT NULL,
   `codigo` varchar(17) NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `fk_id_campania` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `piezas`
@@ -120,19 +120,29 @@ INSERT INTO `piezas` (`id`, `codigo`, `descripcion`, `cantidad`, `fk_id_campania
 -- Indices de la tabla `campanias`
 --
 ALTER TABLE `campanias`
-  ADD PRIMARY KEY (`id_campania`), ADD KEY `fk_id_repuesto` (`codigo`);
+  ADD PRIMARY KEY (`id_campania`),
+  ADD KEY `fk_id_repuesto` (`codigoc`);
 
 --
 -- Indices de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  ADD PRIMARY KEY (`id_imagen`), ADD KEY `fk_id_pieza` (`fk_id_pieza`);
+  ADD PRIMARY KEY (`id_imagen`),
+  ADD KEY `fk_id_pieza` (`fk_id_pieza`);
 
 --
 -- Indices de la tabla `piezas`
 --
 ALTER TABLE `piezas`
-  ADD PRIMARY KEY (`id`), ADD KEY `fk_id_campania` (`fk_id_campania`), ADD KEY `campania` (`fk_id_campania`), ADD KEY `campania_2` (`fk_id_campania`), ADD KEY `campania_3` (`fk_id_campania`), ADD KEY `campania_4` (`fk_id_campania`), ADD KEY `campania_5` (`fk_id_campania`), ADD KEY `campania_6` (`fk_id_campania`), ADD KEY `campania_7` (`fk_id_campania`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_id_campania` (`fk_id_campania`),
+  ADD KEY `campania` (`fk_id_campania`),
+  ADD KEY `campania_2` (`fk_id_campania`),
+  ADD KEY `campania_3` (`fk_id_campania`),
+  ADD KEY `campania_4` (`fk_id_campania`),
+  ADD KEY `campania_5` (`fk_id_campania`),
+  ADD KEY `campania_6` (`fk_id_campania`),
+  ADD KEY `campania_7` (`fk_id_campania`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -142,7 +152,7 @@ ALTER TABLE `piezas`
 -- AUTO_INCREMENT de la tabla `campanias`
 --
 ALTER TABLE `campanias`
-  MODIFY `id_campania` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+  MODIFY `id_campania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
@@ -152,7 +162,7 @@ ALTER TABLE `imagenes`
 -- AUTO_INCREMENT de la tabla `piezas`
 --
 ALTER TABLE `piezas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
@@ -161,13 +171,13 @@ ALTER TABLE `piezas`
 -- Filtros para la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`fk_id_pieza`) REFERENCES `piezas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`fk_id_pieza`) REFERENCES `piezas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `piezas`
 --
 ALTER TABLE `piezas`
-ADD CONSTRAINT `piezas_ibfk_1` FOREIGN KEY (`fk_id_campania`) REFERENCES `campanias` (`id_campania`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `piezas_ibfk_1` FOREIGN KEY (`fk_id_campania`) REFERENCES `campanias` (`id_campania`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
