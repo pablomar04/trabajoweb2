@@ -51,7 +51,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li ><a href="#" id="home">Home</a></li>
-            <li ><a href="#" id="abm">Carga ABM</a></li>
+            <li ><a href="#" id="abm">ABM</a></li>
 
           </ul>
 

@@ -41,8 +41,8 @@ $("#home").click(function(){
         datatype:"html",
         success:function(data){
           
-          //$('#contenedor').html(data);
-          crearPiezas();
+          $('#contenedor').html(data);
+          //crearPiezas();
         },
         error: function(){
           $('#contenedor').html("<p>Sin conexión. Intente más tarde.</p>");
@@ -62,7 +62,7 @@ $("#abm").click(function(){
         datatype:"html",
         success:function(data){
           
-          $("#contenedor").html(data);
+         // $("#contenedor").html(data);
 
         },
         error: function(){
