@@ -1,4 +1,4 @@
-function crearPiezas(){
+/*function crearPiezas(){
 
   $.ajax({
     method:'GET',
@@ -27,12 +27,13 @@ function crearPiezaHTML(pieza){
   //html+='<td><div class="btn btn-primary" >mas información</div></tr>';
   return html;
                 
-}
+}*/
 
 
 $(document).ready(function(){
 
 $("#home").click(function(){
+      event.preventDefault();
       $.ajax({
         type:"GET",
         cache:false,
@@ -40,26 +41,28 @@ $("#home").click(function(){
         datatype:"html",
         success:function(data){
           
-          $('#contenedor').html(data);
-
+          //$('#contenedor').html(data);
+          crearPiezas();
         },
         error: function(){
           $('#contenedor').html("<p>Sin conexión. Intente más tarde.</p>");
         }
     });
-      event.preventDefault();
+      
 });
 
-$("#stock").click(function(){
+
+
+$("#abm").click(function(){
       event.preventDefault();
       $.ajax({
         type:"GET",
         cache:false,
-        url:"index.php?action=stock",
+        url:"index.php?action=abm",
         datatype:"html",
         success:function(data){
           
-          $('#listaPiezas').html(data);
+          $("#contenedor").html(data);
 
         },
         error: function(){
@@ -69,9 +72,7 @@ $("#stock").click(function(){
       
 });
 
-
-
-crearPiezas();
+//crearPiezas();
 
 });
 

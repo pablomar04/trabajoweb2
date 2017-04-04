@@ -15,6 +15,11 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     $controller->mostrarHome();
     break;
 
+    case ConfigApp::$ACTION_ABM:
+    $controller = new PiezasController();
+    $controller->mostrarAbm();
+    break;
+
 
     case ConfigApp::$ACTION_VER_PIEZA:
     $controller = new PiezasController();
@@ -27,5 +32,5 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     break;
 }
 
-echo ConfigApp::$ACTION;
+
 ?>

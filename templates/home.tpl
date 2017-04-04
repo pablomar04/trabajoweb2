@@ -1,1 +1,4 @@
-<h1>Este es el home - Control de stock de piezas de campañas</h1>
+ <h1>Homw 2</h1>
+    
+    {include file="lista.tpl"}
+

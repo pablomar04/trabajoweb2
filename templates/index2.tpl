@@ -8,9 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="">
 
-    <title>Campañas</title>
+    <title>Stock de piezas</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,6 +51,16 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li ><a href="#" id="home">Home</a></li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Campañas <span class="caret"></span>
+              </a>
+            <ul class="dropdown-menu">
+              <li ><a href="#" id="10D8">10D8</a></li>
+              <li ><a href="#" id="20F7">20F7</a></li>
+            </ul>
+            </li>
+            
             <li ><a href="#" id="abm">Carga ABM</a></li>
 
           </ul>
@@ -58,3 +68,42 @@
         </div>
       </div>
     </nav>
+
+    <div id="contenedor">
+    
+
+      <div class="table-responsive" >
+        <table class="table table-striped">
+          <thead>
+            <tr>          
+              <th>Codigo</th>
+              <th>Descripcion</th>             
+              <th>Cantidad</th>
+              <th>Campaña</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id='listaPiezas'>           
+            
+          </tbody>
+        </table>
+ 
+                               
+             
+      </div>
+
+    </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/vendor/holder.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

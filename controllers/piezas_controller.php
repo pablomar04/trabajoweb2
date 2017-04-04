@@ -14,8 +14,16 @@
 			$this->view->mostrarPiezas($this->model->getPiezas());
 		}
 
+		function mostrarHome2(){
+			$this->view->mostrarHome2($this->model->getPiezas());
+		}
+
 		function mostrarPieza(){
 			$this->view->mostrarPieza($this->model->getPieza());
+		}
+
+		function mostrarAbm(){
+			$this->view->mostrarAbm();
 		}
 
 
