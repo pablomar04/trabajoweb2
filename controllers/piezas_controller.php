@@ -11,7 +11,7 @@
 		}
 
 		function mostrarHome(){
-			$this->view->mostrarPiezas($this->model->getPiezas());
+			$this->view->mostrarHome();
 		}
 
 

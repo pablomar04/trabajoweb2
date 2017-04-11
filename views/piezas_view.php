@@ -4,8 +4,8 @@
 
 	class PiezasView extends View {
 
-		function mostrarPiezas($piezas){
-  			$this->smarty->assign('piezas',$piezas);
+		function mostrarHome(){
+  			//$this->smarty->assign('piezas',$piezas);
   			$this->smarty->display('index.tpl');
 
   		}
