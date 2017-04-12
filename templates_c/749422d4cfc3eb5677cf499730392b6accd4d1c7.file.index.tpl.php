@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2017-04-08 22:38:58
+<?php /* Smarty version Smarty-3.1.14, created on 2017-04-12 22:50:08
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:612857e4a543dd9396-20366433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1491683908,
+      1 => 1492030205,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_57e4a543eb3fc6_23096345')) {function content_57e4a543eb3fc6_23096345($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 
- <div id="contenedor">
+ <div id="contenedor" class="container-fluid">
     
-    <?php echo $_smarty_tpl->getSubTemplate ("lista.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+    	<?php echo $_smarty_tpl->getSubTemplate ("lista.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-
+	
 </div>  
 
  

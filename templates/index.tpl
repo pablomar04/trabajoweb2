@@ -1,9 +1,9 @@
 {include file="header.tpl"}
 
- <div id="contenedor">
+ <div id="contenedor" class="container-fluid">
     
-    {include file="lista.tpl"}
-
+    	{include file="lista.tpl"}
+	
 </div>  
 
  
