@@ -7,10 +7,10 @@ $(document).ready(function(){
   }
 
   $(".actualizar").click(function(){
-        event.preventDefault();
+        event.preventDefault(); 
+        alert('escucho');
         $.ajax({
-          method:"GET",
-          cache:false,
+          type:"GET",          
           url:"api/pieza",
           datatype:"JSON",
           success:function(piezas){
@@ -24,26 +24,46 @@ $(document).ready(function(){
           error: function(){
            alert('Error al pedir las piezas');
           }
-      });
-        
+        });
+       
   });
 
+$("#home").click(function(){
+      event.preventDefault();
 
+      $.ajax({
+        type:"GET",
+        
+        url:"templates/lista.tpl",
+        datatype:"html",
+        success:function(data){
+         
+         $("#contenedor").html(data);
+
+        },
+        error: function(){
+          alert('error');
+        }
+    });
+      
+});
 
 $("#abm").click(function(){
       event.preventDefault();
       $.ajax({
         type:"GET",
-        cache:false,
-        url:"index.php?action=abm",
-        datatype:"html",
+      
+        url:"templates/abm.tpl",
+        datatype:'html',
+        
         success:function(data){
           
-         // $("#contenedor").html(data);
+         $("#contenedor").html(data);
 
         },
         error: function(){
-          $('#listaPiezas').html("<p>Sin conexión. Intente más tarde.</p>");
+          alert('error');
+          //$('#listaPiezas').html("<p>Sin conexión. Intente más tarde.</p>");
         }
     });
       

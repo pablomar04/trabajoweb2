@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2017-04-08 22:39:01
+<?php /* Smarty version Smarty-3.1.14, created on 2017-04-15 19:23:31
          compiled from ".\templates\abm.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:632658d09e9903b4d9-05545654%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3818df03c7e2ecee6dd9264e502e14d5f489d813' => 
     array (
       0 => '.\\templates\\abm.tpl',
-      1 => 1491683908,
+      1 => 1492276948,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_58d09e990a29f3_69997591')) {function content_58d09e990a29f3_69997591($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 
- <div id="contenedor">
+ <div id="contenedor" class="container-fluid">
     
     <h1>ABM</h1>
 

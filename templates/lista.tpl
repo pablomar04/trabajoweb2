@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12 center divbutton"><button type="button" class="btn btn-primary actualizar">Actualizar stock</button></div>
+  <div class="col-md-12 divbutton"><button type="button" class="btn btn-primary actualizar">Actualizar stock</button></div>
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -15,7 +15,7 @@
                 </tr>
               </thead>
               
-              <tbody id="listaPiezas">         
+              <tbody>         
                <!-- {foreach from=$piezas item=pieza}
                 <tr>
                   <td>{$pieza['codigo']}</td>
